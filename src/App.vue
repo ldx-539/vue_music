@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <TopNav></TopNav>
+    <!-- router-view 是路由匹配到视图组件显示位置 -->
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
-
+<script>
+//App.vue也是组件. 是根组件
+import TopNav from "./components/TopNav";
+export default {
+  components: {
+    TopNav,
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -20,7 +28,7 @@
 #nav {
   padding: 30px;
 }
-
+/* kele88.cn */
 #nav a {
   font-weight: bold;
   color: #2c3e50;
